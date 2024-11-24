@@ -6,6 +6,8 @@ package main
 import (
 	"fmt"
 	"mymodule/helpers"
+	// another way to do it 
+	// helpers "mymodule/helpers"
 )
 
 func main() {
