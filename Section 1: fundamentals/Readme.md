@@ -23,3 +23,34 @@ By studying this file, you will learn:
 - The differences between decimal, hexadecimal, and binary number systems.
 - How to define numbers in different bases in Go (e.g., binary using `0b`, hexadecimal using `0x`).
 - How to print multiple numerical representations in a single formatted output.
+
+
+
+# Go Type Conversion and Variable Scope
+
+## File: `fundamentals/03_values_types_conversions_scope.go`
+
+### Description
+The main file showcases:
+- **Type Conversion**: Explicitly converting one data type to another, such as converting an `int` to a `float64` for arithmetic operations.
+- **Variable Scope**: Understanding the accessibility of variables defined in different scopes (global vs local).
+
+### Key Concepts
+
+#### Type Conversion
+- Go requires explicit type conversion when performing operations between different types.
+- Example:
+  ```go
+  var a int = 10
+  var b float64 = 20.5
+  c := float64(a) + b // 'a' is converted to float64 before addition
+  ```
+
+#### Variable Scope
+- **Global Variables**: Defined outside of functions and accessible throughout the package.
+- **Local Variables**: Defined within a function and only accessible within that function.
+- Example:
+  ```go
+  var globalVar = "I am global" // Global variable
+  localVar := "I am local"       // Local variable
+  ```
