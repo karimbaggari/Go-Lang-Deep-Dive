@@ -17,4 +17,5 @@ func main() {
 
 	// This will fail:
 	// fmt.Println(helpers.subtract(10, 4)) // Unexported functions are not visible
+	// ? check the helpers folder 
 }
