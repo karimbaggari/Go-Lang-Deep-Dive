@@ -26,4 +26,8 @@
 
 ## **5. Composition vs. Inheritance**
 - **File:** [05_composition_vs_inheritance.go](fundamentals/05_composition_vs_inheritance.go)  
-- **Description:** This file discusses the differences between composition and inheritance in Go, illustrating how composition promotes flexibility and code reuse.
+- **Description:** Go favors composition over inheritance for code reuse and flexibility:
+  - **Struct Embedding:** Demonstrates how struct composition works in Go.
+  - **Interfaces:** Using interfaces to compose behavior without inheritance.
+
+This approach allows for more flexible and modular code, as it enables developers to mix and match different types of behavior without the rigidity of inheritance hierarchies.
