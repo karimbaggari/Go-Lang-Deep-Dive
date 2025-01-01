@@ -1,56 +1,29 @@
-# Zero values blank identifier
+# **Deep Dive into Go: Section 1 - Fundamentals**
 
-## Zero Values:
-The file demonstrates the concept of zero values in Go. When variables are declared but not initialized, they automatically receive a default value based on their type:
-int defaults to 0
-float64 defaults to 0.0
-bool defaults to false
-string defaults to an empty string ""
-The program prints these zero values to the console, illustrating how Go handles uninitialized variables.
+## **1. Zero Values and Blank Identifier**
+- **File:** [01_zero_values_blank_identifier.go](fundamentals/01_zero_values_blank_identifier.go)  
+- **Description:** This file demonstrates the concept of zero values in Go. When variables are declared but not initialized, they automatically receive a default value based on their type:
+  - `int` defaults to 0
+  - `float64` defaults to 0.0
+  - `bool` defaults to false
+  - `string` defaults to an empty string ""
+  
+  The program prints these zero values to the console, illustrating how Go handles uninitialized variables. It also covers the use of the blank identifier (_) to ignore values returned by functions.
 
-## Blank Identifier:
-the blank identifier (_), which is used to ignore a value returned by a function. In this case, the divide function returns both a quotient and a remainder, but only the quotient is needed for further processing.
-This demonstrates a common practice in Go to avoid unused variable warnings while still utilizing the function's output.
+## **2. Using `fmt.Printf` for Numerical Systems**
+- **File:** [02_printf_and_numerical_systems.go](fundamentals/02_printf_and_numerical_systems.go)  
+- **Description:** This Go program demonstrates how to represent and print numbers in different numerical systems: decimal, hexadecimal, and binary. It serves as an educational tool for understanding how numerical representations work in programming.
 
-# Understanding Numerical Systems in Go
+## **3. Go Type Conversion and Variable Scope**
+- **File:** [03_values_types_conversions_scope.go](fundamentals/03_values_types_conversions_scope.go)  
+- **Description:** This file showcases:
+  - **Type Conversion:** Explicitly converting one data type to another, such as converting an `int` to a `float64` for arithmetic operations.
+  - **Variable Scope:** Understanding the accessibility of variables defined in different scopes (global vs local).
 
-## Purpose
-This Go program demonstrates how to represent and print numbers in different numerical systems: decimal, hexadecimal, and binary. It serves as an educational tool for understanding how numerical representations work in programming.
+## **4. Built-in Aggregate Types**
+- **File:** [04_builtin_aggregate_types.go](fundamentals/04_builtin_aggregate_types.go)  
+- **Description:** This file explains the built-in aggregate types in Go, including arrays, slices, maps, and structs. It provides examples of how to declare and use these types effectively.
 
-## Learning Objectives
-By studying this file, you will learn:
-- How to use the `fmt.Printf` function to format output in Go.
-- The differences between decimal, hexadecimal, and binary number systems.
-- How to define numbers in different bases in Go (e.g., binary using `0b`, hexadecimal using `0x`).
-- How to print multiple numerical representations in a single formatted output.
-
-
-
-# Go Type Conversion and Variable Scope
-
-## File: `fundamentals/03_values_types_conversions_scope.go`
-
-### Description
-The main file showcases:
-- **Type Conversion**: Explicitly converting one data type to another, such as converting an `int` to a `float64` for arithmetic operations.
-- **Variable Scope**: Understanding the accessibility of variables defined in different scopes (global vs local).
-
-### Key Concepts
-
-#### Type Conversion
-- Go requires explicit type conversion when performing operations between different types.
-- Example:
-  ```go
-  var a int = 10
-  var b float64 = 20.5
-  c := float64(a) + b // 'a' is converted to float64 before addition
-  ```
-
-#### Variable Scope
-- **Global Variables**: Defined outside of functions and accessible throughout the package.
-- **Local Variables**: Defined within a function and only accessible within that function.
-- Example:
-  ```go
-  var globalVar = "I am global" // Global variable
-  localVar := "I am local"       // Local variable
-  ```
+## **5. Composition vs. Inheritance**
+- **File:** [05_composition_vs_inheritance.go](fundamentals/05_composition_vs_inheritance.go)  
+- **Description:** This file discusses the differences between composition and inheritance in Go, illustrating how composition promotes flexibility and code reuse.
