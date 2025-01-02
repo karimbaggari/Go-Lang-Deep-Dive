@@ -1,4 +1,4 @@
-# **Deep Dive into Go: Section 10 - Pointers**
+# **Deep Dive into Go: Section 9 - Pointers**
 
 ## **1. Introduction to Pointers**
 - **File:** [01_pointers_intro.go](pointers/01_pointers_intro.go)  
