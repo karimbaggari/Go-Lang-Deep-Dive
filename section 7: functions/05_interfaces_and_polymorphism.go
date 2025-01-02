@@ -1,38 +1,63 @@
-// Interfaces and Polymorphism
+// Interfaces and Polymorphism Example
 
 package main
 
 import "fmt"
 
-// Interface Definition
-type Shape interface {
-	Area() float64
+
+
+/*
+In Go, polymorphism allows different types to be treated as 
+instances of a common interface, enabling flexible and reusable
+code. In the provided example, the Engine interface defines
+a method Start(), which is implemented by both ElectricEngine
+and GasEngine. This allows instances of these types 
+to be assigned to the Engine field in the Car struct,
+enabling interchangeable use. When the Start() method 
+is called on an Engine, the actual method executed depends
+on the concrete type of the engine, demonstrating dynamic 
+method resolution. This design promotes extensibility,
+as new types can be added without modifying existing code,
+enhancing maintainability and reducing complexity.
+*/
+
+// Engine interface with a single method
+type Engine interface {
+	Start() string // Method to start the engine
 }
 
-// Structs Implementing the Interface
-type Circle struct {
-	Radius float64
+// ElectricEngine struct defined to implement the Engine interface
+type ElectricEngine struct{} // Empty struct
+
+
+// Start method for ElectricEngine
+func (e ElectricEngine) Start() string {
+	return "Electric engine started silently." // Message for electric engine
 }
 
-func (c Circle) Area() float64 {
-	return 3.14 * c.Radius * c.Radius
+// GasEngine struct implementing the Engine interface
+type GasEngine struct{}
+
+// Start method for GasEngine
+func (g GasEngine) Start() string {
+	return "Gas engine started with a roar!" // Message for gas engine
 }
 
-type Rectangle struct {
-	Width, Height float64
-}
-
-func (r Rectangle) Area() float64 {
-	return r.Width * r.Height
+// Car struct that uses an Engine
+type Car struct {
+	Brand  string // Brand of the car
+	Engine Engine // Engine type
 }
 
 func main() {
-	shapes := []Shape{
-		Circle{Radius: 5},
-		Rectangle{Width: 10, Height: 5},
+	// Create instances of Car with different engines
+	cars := []Car{
+		{Brand: "Tesla", Engine: ElectricEngine{}}, // Car with electric engine
+		{Brand: "Ford", Engine: GasEngine{}},       // Car with gas engine
 	}
 
-	for _, shape := range shapes {
-		fmt.Println("Area:", shape.Area())
+	// Iterate over cars and start their engines
+	for _, car := range cars {
+		fmt.Printf("%s: %s\n", car.Brand, car.Engine.Start()) // Call Start method for each engine
 	}
 }
