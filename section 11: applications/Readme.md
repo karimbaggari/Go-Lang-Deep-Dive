@@ -4,12 +4,12 @@
 - **File:** [01_json_examples.go](applications/01_json_examples.go)  
 - **Description:** This file consolidates JSON handling in Go, including documentation, marshalling, and unmarshalling processes.
 
-## **5. Sorting**
-- **File:** [02_sorting.go](applications/05_sorting.go)  
+## **2. Sorting**
+- **File:** [02_sorting.go](applications/02_sorting.go)  
 - **Description:** This file provides examples of sorting data in Go, including using the built-in `sort` package to sort slices and custom types.
 
-## **7. Cryptography**
-- **File:** [03_cryptography.go](applications/07_cryptography.go)  
+## **3. Cryptography**
+- **File:** [03_cryptography.go](applications/03_cryptography.go)  
 - **Description:** This file provides practical examples of using cryptographic functions in Go, including generating SHA256 hashes for given data.
 
 ## **Conclusion**
