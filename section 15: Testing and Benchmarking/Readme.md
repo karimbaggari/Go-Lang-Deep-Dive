@@ -1,4 +1,4 @@
-# **Deep Dive into Go: Section 17 - Testing and Benchmarking**
+# **Deep Dive into Go: Section 15 - Testing and Benchmarking**
 
 ## **1. Writing Tests**
 - **File:** [01_basic_test.go](testing_benchmarking/01_basic_test.go)  
