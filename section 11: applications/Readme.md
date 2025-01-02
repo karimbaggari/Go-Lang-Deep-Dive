@@ -1,4 +1,4 @@
-# **Deep Dive into Go: Section 12 - Applications**
+# **Deep Dive into Go: Section 11 - Applications**
 
 ## **1. JSON Examples**
 - **File:** [01_json_examples.go](applications/01_json_examples.go)  
