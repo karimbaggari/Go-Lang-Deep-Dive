@@ -2,14 +2,21 @@ package main
 
 import "fmt"
 
-// Using type alias for underlying types
-type IntAlias int
+// Defining a type alias for different numeric types
+type NumberAlias interface {
+	int | float64
+}
 
-func PrintAliasValue(val IntAlias) {
+// Creating a function that accepts NumberAlias
+func PrintNumberValue[T NumberAlias](val T) {
 	fmt.Println("Value:", val)
 }
 
+// Updating main function to demonstrate NumberAlias with different types
 func main() {
-	var x IntAlias = 10
-	PrintAliasValue(x)
+	var intValue NumberAlias = 10
+	var floatValue NumberAlias = 10.5
+
+	PrintNumberValue(intValue)
+	PrintNumberValue(floatValue)
 }

@@ -16,8 +16,14 @@ Generics in Go allow you to write flexible and reusable code. With generics, fun
 
 ---
 
-## **3. Type Constraints & Types**
-- **File:** [03_generics_examples.go](generics/03_generics_examples.go)  
+## **3. Type Aliases**
+- **File:** [03_type_alias.go](generics/03_type_alias.go)  
+- **Description:** In Go, **type aliases** allow you to create more readable and reusable types. This file shows how to define type aliases and how they simplify your code, especially when working with complex types or generic functions. Instead of repeating type definitions, type aliases allow you to create shorter, more meaningful names for complex types.
+
+---
+
+## **4. Type Constraints & Types**
+- **File:** [04_generics_examples.go](generics/04_generics_examples.go)  
 - **Description:** This file explores how type constraints and types work together. It shows how to create generic functions that are flexible, but still enforce certain rules to ensure that only valid types are used.
 
 ---

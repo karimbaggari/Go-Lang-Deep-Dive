@@ -1,36 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-// Generic stack example
-type Stack[T any] struct {
-	data []T
+// Define a constraint: T must be a type that supports the `+` operator (i.e., number types)
+type Adder interface {
+	int | int32 | int64 | float32 | float64 // Only numeric types are allowed
 }
 
-func (s *Stack[T]) Push(item T) {
-	s.data = append(s.data, item)
-}
-
-func (s *Stack[T]) Pop() T {
-	if len(s.data) == 0 {
-		var zero T
-		return zero
-	}
-	item := s.data[len(s.data)-1]
-	s.data = s.data[:len(s.data)-1]
-	return item
+// A generic function that adds two values of type T, where T must satisfy the Adder interface
+func Add[T Adder](a T, b T) T {
+	fmt.Println("Adding", a, "and", b)
+	return a + b
 }
 
 func main() {
-	intStack := Stack[int]{}
-	intStack.Push(10)
-	intStack.Push(20)
-	fmt.Println(intStack.Pop()) // 20
-	fmt.Println(intStack.Pop()) // 10
+	// Using the Add function with integers
+	intResult := Add(10, 20)
+	fmt.Println("Result of adding integers:", intResult)
 
-	stringStack := Stack[string]{}
-	stringStack.Push("Hello")
-	stringStack.Push("World")
-	fmt.Println(stringStack.Pop()) // World
-	fmt.Println(stringStack.Pop()) // Hello
+	// Using the Add function with floating point numbers
+	floatResult := Add(10.5, 20.3)
+	fmt.Println("Result of adding floats:", floatResult)
+
+	// Uncommenting the following line would cause a compile-time error because strings are not part of the Adder interface
+	// stringResult := Add("Hello", "World")
+	// fmt.Println(stringResult)
 }
