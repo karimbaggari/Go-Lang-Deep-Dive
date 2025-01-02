@@ -19,9 +19,10 @@ func main() {
 	result, err := divide(10, 2)
 	if err != nil {
 		fmt.Println("Error:", err)
-	} else {
-		fmt.Println("Result:", result)
 	}
+	
+		fmt.Println("Result:", result)
+	
 
 	result, err = divide(10, 0)
 	if err != nil {

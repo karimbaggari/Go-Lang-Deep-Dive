@@ -7,9 +7,25 @@ import (
 	"fmt"
 )
 
+// Custom Error Definition
+type FileError struct {
+	Filename string
+	Err      error
+}
+
+func (e *FileError) Error() string {
+	return fmt.Sprintf("file error: %s: %v", e.Filename, e.Err)
+}
+
 // Function Wrapping Errors
-func readFile(filename string) error {
-	return fmt.Errorf("failed to open file %s: %w", filename, errors.New("file not found"))
+func readFile(filename string) (string, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return "", &FileError{Filename: filename, Err: err} // Use custom error
+	}
+	defer file.Close()
+
+	return "", nil
 }
 
 func main() {
