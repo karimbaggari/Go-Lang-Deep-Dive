@@ -21,4 +21,7 @@ func main() {
 	var newUser User
 	json.Unmarshal(data, &newUser)
 	fmt.Println("User Struct:", newUser)
+
+// JSON Marshalling: Converts Go struct to JSON string.
+// JSON Unmarshalling: Converts JSON string back to Go struct.
 }
